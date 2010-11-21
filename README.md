@@ -11,9 +11,9 @@ It was inspired by Helium (https://github.com/geuis/helium-css/). cssess has man
 * Helium requires that you add URLs to check manually. cssess will spider all same domain links on the current page.
 * Helium was designed to be included within the page. cssess is designed to be used as a bookmarklet.
 
-To install as a bookmarklet use the following:
+To install as a bookmarklet use the following in a bookmark URL:
 
-[Drag this link to your bookmarks](javascript:(function(d,t){var j=d.createElement(t),s=d.getElementsByTagName(t)[0]||d.getElementsByTagName("link")[0];j.src='http://driverdan.github.com/cssess/cssess-min.js';s.parentNode.insertBefore(j,s);})(document,"script");)
+	javascript:(function(d,t){var j=d.createElement(t),s=d.getElementsByTagName(t)[0]||d.getElementsByTagName("link")[0];j.src='http://driverdan.github.com/cssess/cssess-min.js';s.parentNode.insertBefore(j,s);})(document,"script");
 
 To use the un-minified version replace cssess-min.js with cssess.js.
 
