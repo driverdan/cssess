@@ -1,0 +1,42 @@
+/**
+ * Styles for cssess
+ *
+ * @see http://github.com/driverdan/cssess
+ * @author Dan DeFelippi <dan@driverdan.com>
+ * @license MIT
+ */
+
+#cssess {
+	background: #fff;
+	opacity: .8;
+	color: #333;
+	border: 2px solid;
+	padding: 5px;
+	width: 90%;
+	height: 90%;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	overflow: auto;
+	z-index: 9999;
+	color: #000;
+	text-align: left;
+	font-size: 14px;
+}
+
+#cssess h2 {
+	margin: 0 0 .5em;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#cssess ul {
+	list-style-type: none;
+}
+
+#cssess a.close {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	font-weight: bold;
+}

@@ -1,0 +1,8 @@
+/* comment */
+body {
+	background: #eee;
+}
+/* unused selector */
+a.foobar {
+	color: #000;
+}

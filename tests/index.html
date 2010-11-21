@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Test Page</title>
+		
+		<!-- external stylesheet -->
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/overcast/jquery-ui.css" />
+		
+		<!-- local stylesheet -->
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<!-- test inline style -->
+		<style>
+			body {
+				color: #333;
+			}
+			#foobar {
+				color: #fff;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="header">
+			<h1>Page Title</h1>
+			<h2>page tagline</h2>
+		</div>
+		
+		<div id="content">
+			<h3>content header</h3>
+			<h4>section header 1</h4>
+			<p>paragraph 1</p>
+			<h4>section header 2</h4>
+			<p>paragraph 2</p>
+			<p>paragraph 3</p>
+		</div>
+		
+		<div id="footer">
+			<ul class="nav">
+				<li class="home"><a href="./">home (current path)</a></li>
+				<li><a href="about.html">about (relative)</a></li>
+				<li><a href="http://driverdan.com">driverdan.com (full url internal)</a></li>
+				<li><a href="http://github.com" class="popup">github (external)</a></li>
+				<li><a href="/cssess/tests/contact.html">contact (absolute)</a></li>
+				<li><a href="">(empty)</a></li>
+				<li><a href="javascript:alert('js roxorz')">(javascript)</a></li>
+				<li><a href="#footer">(internal)</a></li>
+			</ul>
+		</div>
+		
+		<script src="../cssess.js"></script>
+	</body>
+</html>
