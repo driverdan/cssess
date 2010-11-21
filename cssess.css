@@ -6,10 +6,13 @@
  * @license MIT
  */
 
+#cssess, #cssess h2, #cssess li {
+	color: #333;
+}
+
 #cssess {
 	background: #fff;
-	opacity: .8;
-	color: #333;
+	opacity: .9;
 	border: 2px solid;
 	padding: 5px;
 	width: 90%;
@@ -32,6 +35,15 @@
 
 #cssess ul {
 	list-style-type: none;
+}
+
+#cssess li {
+	display: list-item;
+	margin: 0;
+}
+
+#cssess a {
+	color: #d00;
 }
 
 #cssess a.close {
