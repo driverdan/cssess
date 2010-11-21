@@ -10,7 +10,7 @@
 
 var cssess = cssess || {};
 
-cssess.baseUrl = "http://driverdan.github.com/cssess/";
+cssess.baseUrl = "https://github.com/driverdan/cssess/raw/master/";
 // Namespace for all templates / views
 cssess.v = {};
 
