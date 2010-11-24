@@ -163,12 +163,12 @@ cssess.v.createWin = function() {
 		cssess.win.remove();
 	}
 	cssess.$("#cssess").remove();
-	cssess.win = cssess.$('<div id="cssess-overlay"/><div id="cssess"><h2>CSSess</h2><a class="cssess-close" title="close" href="">X</a><div class="cssess-body"><ul class="links"/><ul class="styles"/></div><button class="run">find unused selectors</button></div>');
+	cssess.win = cssess.$('<div id="cssess-overlay"/><div id="cssess"><h2>CSSess</h2><a class="cssess-close" title="close" href="">X</a><div class="cssess-body"><ul class="cssess-links"/><ul class="cssess-styles"/></div><button class="cssess-run">find unused selectors</button></div>');
 	
 	// Add event to run button to run tests
-	cssess.$("button.run", cssess.win).click(function() {
+	cssess.$("button.cssess-run", cssess.win).click(function() {
 		// Clear any previously detected styles
-		cssess.$("ul.styles", cssess.win).html("");
+		cssess.$("ul.cssess-styles", cssess.win).html("");
 		
 		// Load the checked links and spyder them.
 		cssess.loadLinks();
@@ -187,14 +187,14 @@ cssess.v.createWin = function() {
  * Adds a newly found link to the DOM
  */
 cssess.v.addLink = function(href) {
-	cssess.$("ul.links", cssess.win).append('<li><input type="checkbox" name="urls" value="' + href + '" checked/> ' + href + '</li>');
+	cssess.$("ul.cssess-links", cssess.win).append('<li><input type="checkbox" name="urls" value="' + href + '" checked/> ' + href + '</li>');
 };
 
 /**
  * Save additional unused selectors
  */
 cssess.v.addUnused = function(name, selectors) {
-	var $ul = cssess.$("ul.styles", cssess.win)
+	var $ul = cssess.$("ul.cssess-styles", cssess.win)
 		, li = "<li><strong>" + name + " (" + selectors.length + " found)</strong><ul>"
 		, i;
 	// Each missing selector

@@ -38,7 +38,7 @@
 	font-size: 14px;
 }
 
-.cssess-body {
+#cssess .cssess-body {
 	overflow: auto;
 	height: 283px;
 }
@@ -72,7 +72,7 @@
 	margin: 0;
 }
 
-a.cssess-close {
+#cssess a.cssess-close {
 	position: absolute;
 	top: 15px;
 	right: 15px;
@@ -90,11 +90,11 @@ a.cssess-close {
 
 }
 
-#cssess a.close:hover {
+#cssess a.cssess-close:hover {
 	background: #AF0000;
 }
 
-#cssess button.run {
+#cssess button.cssess-run {
 	display: block;
 	width: 100%;
 	margin: 0 auto;
