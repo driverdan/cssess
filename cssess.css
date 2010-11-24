@@ -24,13 +24,13 @@
 	box-shadow: 0 0 25px rgba(0,0,0,.5); 
 	background: #fff;
 	border: 1px solid #000;
-	width: 600px;
-	height: 400px;
+	width: 700px;
+	height: 500px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-top: -200px;
-	margin-left: -300px;
+	margin-top: -250px;
+	margin-left: -350px;
 	overflow: hidden;
 	z-index: 9999;
 	color: #222;
@@ -40,7 +40,7 @@
 
 #cssess .cssess-body {
 	overflow: auto;
-	height: 283px;
+	height: 383px;
 }
 
 #cssess h2 {

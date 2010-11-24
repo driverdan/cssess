@@ -10,8 +10,11 @@
 
 var cssess = cssess || {};
 
-//cssess.baseUrl = "https://github.com/driverdan/cssess/raw/master/";
-cssess.baseUrl = "../";
+cssess.baseUrl = "https://github.com/driverdan/cssess/raw/master/";
+// CHANGE TO RELATIVE PATH FOR TESTING
+// At some point this will be changed to switch via URL parameter
+//cssess.baseUrl = "../";
+
 // Namespace for all templates / views
 cssess.v = {};
 
