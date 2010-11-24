@@ -6,113 +6,113 @@
  * @license MIT
  */
 
-#overlay {
-	background:rgba(0,0,0,0.5);
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	z-index:9998;
+#cssess-overlay {
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9998;
 }
 
 #cssess {
-	-moz-border-radius:15px;
-	border-radius:15px;
-	-webkit-box-shadow:  0px 0px 25px rgba(0,0,0,0.5);
-	-moz-box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
-	box-shadow: 0px 0px 25px rgba(0,0,0,0.5); 
-	background:#fff;
-	border:1px solid #000;
-	width:600px;
-	height:400px;
-	position:absolute;
-	top:50%;
-	left:50%;
-	margin-top:-200px;
-	margin-left:-300px;
-	overflow:auto;
-	z-index:9999;
-	color:#222;
-	text-align:left;
-	font-size:14px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-shadow: 0 0 25px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 25px rgba(0,0,0,.5);
+	box-shadow: 0 0 25px rgba(0,0,0,.5); 
+	background: #fff;
+	border: 1px solid #000;
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -300px;
+	overflow: auto;
+	z-index: 9999;
+	color: #222;
+	text-align: left;
+	font-size: 14px;
 }
 
 #cssess h2 {
 	text-align: center;
-	margin:0;
-	padding:15px 0;
-	font-size:30px;
-	font-family:serif;
-	font-weight:700;
-	text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
-	border-bottom:1px solid #aaa;
-	line-height:30px;
-	-moz-border-radius-topleft:15px;
-	-moz-border-radius-topright:15px;
-	border-top-left-radius:15px;
-	border-top-right-radius:15px;
-	background:#eeeeee;
-	background:-moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc));
-	color:rgba(0,0,0,0.75);
+	margin: 0;
+	padding: 15px 0;
+	font-size: 30px;
+	font-family: serif;
+	font-weight: 700;
+	text-shadow: 1px 1px 0 rgba(255,255,255,.8);
+	border-bottom: 1px solid #aaa;
+	line-height: 30px;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-topright: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background: #eee;
+	background: -moz-linear-gradient(top, #eee 0%, #ccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eee), color-stop(100%,#ccc));
+	color: rgba(0,0,0,.75);
 }
 
 #cssess ul {
-	list-style-type:none;
-	overflow-y:auto;
-	overflow-x:hidden;
+	list-style-type: none;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 #cssess li {
-	display:list-item;
-	margin:0;
+	display: list-item;
+	margin: 0;
 }
 
-#cssess a.close {
-	position:absolute;
-	top:15px;
-	right:15px;
+a.cssess-close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
 	font-weight: bold;
 	-moz-border-radius: 15px;
 	border-radius: 15px; 
-	background:#DD0000;
-	border:1px solid rgba(0,0,0,0.5);
-	color:#fff;
-	padding:6px 10px;
-	text-decoration:none;
-	font-family:sans-serif;
-	text-shadow: 1px 1px 1px #000000;
-	filter: dropshadow(color=#000000, offx=1, offy=1);
+	background: #d00;
+	border: 1px solid rgba(0,0,0,.5);
+	color: #fff;
+	padding: 6px 10px;
+	text-decoration: none;
+	font-family: sans-serif;
+	text-shadow: 1px 1px 1px #000;
+	filter: dropshadow(color=#000, offx=1, offy=1);
 
 }
 
 #cssess a.close:hover {
-	background:#AF0000;
+	background: #AF0000;
 }
 
 #cssess button.run {
-	display:block;
-	width:600px;
-	margin:0 auto;
-	padding:11px 0;
-	background:#0099ff;
-	border:none;
-	border-top:1px solid #aaa;
-	position:absolute;
-	bottom:0;
-	line-height:30px;
-	font-size:30px;
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	padding: 11px 0;
+	background: #09f;
+	border: none;
+	border-top: 1px solid #aaa;
+	position: absolute;
+	bottom: 0;
+	line-height: 30px;
+	font-size: 30px;
 	font-family: serif;
 	font-weight: 700;
-	text-shadow: 1px 1px 0 rgba(220,243,183,0.9);
+	text-shadow: 1px 1px 0 rgba(220,243,183,.9);
 	-moz-border-radius-bottomright: 15px;
 	-moz-border-radius-bottomleft: 15px;
 	border-bottom-right-radius: 15px;
 	border-bottom-left-radius: 15px;
-	background:#d2ff52;
-	background:-moz-linear-gradient(top, #d2ff52 0%, #91e842 100%);
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#d2ff52), color-stop(100%,#91e842));
-	color:rgba(0,0,0,0.75);
-	cursor:pointer;
+	background: #d2ff52;
+	background: -moz-linear-gradient(top, #d2ff52 0%, #91e842 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d2ff52), color-stop(100%,#91e842));
+	color: rgba(0,0,0,.75);
+	cursor: pointer;
 }

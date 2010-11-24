@@ -163,7 +163,7 @@ cssess.v.createWin = function() {
 		cssess.win.remove();
 	}
 	cssess.$("#cssess").remove();
-	cssess.win = cssess.$('<div id="overlay"></div><div id="cssess"><h2>cssess</h2><a class="close" href="">X</a><ul class="links"/><ul class="styles"/><button class="run">find unused selectors</button></div>');
+	cssess.win = cssess.$('<div id="cssess-overlay"></div><div id="cssess"><h2>cssess</h2><a class="cssess-close" title="close" href="">X</a><ul class="links"/><ul class="styles"/><button class="run">find unused selectors</button></div>');
 	
 	// Add event to run button to run tests
 	cssess.$("button.run", cssess.win).click(function() {
@@ -176,7 +176,7 @@ cssess.v.createWin = function() {
 	});
 	
 	// Close button removes the win div
-	cssess.$("a.close", cssess.win).click(function() {
+	cssess.$("a.cssess-close", cssess.win).click(function() {
 		cssess.win.remove();
 		return false;
 	});
