@@ -31,11 +31,16 @@
 	left: 50%;
 	margin-top: -200px;
 	margin-left: -300px;
-	overflow: auto;
+	overflow: hidden;
 	z-index: 9999;
 	color: #222;
 	text-align: left;
 	font-size: 14px;
+}
+
+.cssess-body {
+	overflow: auto;
+	height: 283px;
 }
 
 #cssess h2 {
@@ -60,8 +65,6 @@
 
 #cssess ul {
 	list-style-type: none;
-	overflow-y: auto;
-	overflow-x: hidden;
 }
 
 #cssess li {
