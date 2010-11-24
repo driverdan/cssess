@@ -1,5 +1,5 @@
 ﻿/**
- * cssess
+ * CSSess
  * A bookmarklet for detecting unused CSS selectors and related info.
  * Copyright 2010 passive.ly LLC
  * @see http://github.com/driverdan/cssess
@@ -155,7 +155,7 @@ cssess.loadLinks = function() {
 };
 
 /**
- * Creates the cssess modal window.
+ * Creates the modal window.
  */
 cssess.v.createWin = function() {
 	// Remove window if it already exists
@@ -163,7 +163,7 @@ cssess.v.createWin = function() {
 		cssess.win.remove();
 	}
 	cssess.$("#cssess").remove();
-	cssess.win = cssess.$('<div id="cssess-overlay"/><div id="cssess"><h2>cssess</h2><a class="cssess-close" title="close" href="">X</a><div class="cssess-body"><ul class="links"/><ul class="styles"/></div><button class="run">find unused selectors</button></div>');
+	cssess.win = cssess.$('<div id="cssess-overlay"/><div id="cssess"><h2>CSSess</h2><a class="cssess-close" title="close" href="">X</a><div class="cssess-body"><ul class="links"/><ul class="styles"/></div><button class="run">find unused selectors</button></div>');
 	
 	// Add event to run button to run tests
 	cssess.$("button.run", cssess.win).click(function() {
@@ -204,12 +204,12 @@ cssess.v.addUnused = function(name, selectors) {
 	$ul.append(li + "</ul></li>");
 };
 
-// Initialize cssess
+// Initialize everything
 (function(d, t) {
 	var el, s
 	
 	/**
-	 * Opens the cssess dialog and gets it running.
+	 * Opens the dialog and gets it running.
 	 */
 	, init = function($) {
 		// Create modal window
