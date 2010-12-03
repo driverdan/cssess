@@ -13,9 +13,9 @@ It was inspired by Helium (https://github.com/geuis/helium-css/). CSSess has man
 
 To install as a bookmarklet use the following in a bookmark URL:
 
-	javascript:(function(d,t){var j=d.createElement(t),s=d.getElementsByTagName(t)[0]||d.getElementsByTagName("link")[0];j.src='https://github.com/driverdan/CSSess/raw/master/CSSess-min.js';s.parentNode.insertBefore(j,s);})(document,"script");
+	javascript:(function(d,t){var j=d.createElement(t),s=d.getElementsByTagName(t)[0]||d.getElementsByTagName("link")[0];j.src='https://github.com/driverdan/cssess/raw/master/cssess-min.js';s.parentNode.insertBefore(j,s);})(document,"script");
 
-To use the un-minified version replace CSSess-min.js with CSSess.js.
+To use the un-minified version replace cssess-min.js with cssess.js.
 
 How It Works
 ------------
