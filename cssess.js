@@ -61,7 +61,7 @@ cssess.start = function() {
 	cssess.v.addLink(window.location.href);
 	
 	// Get anchors that don't have an empty href, JS, or internal link
-	cssess.$("a[href!='']:not([href^='javascript:']):not([href^='#'])").each(function() {
+	cssess.$("a[href!='']:not([href^='javascript:']):not([href^='#']):not([href^='mailto:'])").each(function() {
 		var href = this.href;
 		
 		// Check for external links
