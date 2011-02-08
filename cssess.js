@@ -18,6 +18,9 @@ cssess.baseUrl = "https://github.com/driverdan/cssess/raw/master/";
 // Namespace for all templates / views
 cssess.v = {};
 
+// List of links on the page
+cssess.links = [];
+
 /**
  * Fetches the styles from a page and checks them.
  */
@@ -190,7 +193,11 @@ cssess.v.createWin = function() {
  * Adds a newly found link to the DOM
  */
 cssess.v.addLink = function(href) {
-	cssess.$("ul.cssess-links", cssess.win).append('<li><input type="checkbox" name="urls" value="' + href + '" checked/> ' + href + '</li>');
+	// Make sure the link hasn't already been found
+	if (cssess.$.inArray(href, cssess.links) == -1) {
+		cssess.links.push(href);
+		cssess.$("ul.cssess-links", cssess.win).append('<li><input type="checkbox" name="urls" value="' + href + '" checked/> ' + href + '</li>');
+	}
 };
 
 /**
