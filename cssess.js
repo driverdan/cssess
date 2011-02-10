@@ -43,15 +43,12 @@ cssess.checkStyles = function(url, source) {
 	}
 	
 	// Process stylesheets
-	cssess.$("link[href!='']:not([href^='file:']):not([href^='chrome://'])", source).each(function() {
+	cssess.$("link[rel='stylesheet'][href!='']:not([href^='file:']):not([href^='chrome://'])", source).each(function() {
 		// Check for local or external stylesheet
 		var href = this.href;
 		
 		if (!href.match(/^https?:\/\//) 
-			|| (
-				href.indexOf(cssess.siteUrl) == 0 
-				&& href != window.location
-			)
+			|| href.indexOf(cssess.siteUrl) == 0 
 		) {
 			cssess.$.get(href, function(data, status) {
 				if (data) {
