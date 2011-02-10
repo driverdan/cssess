@@ -63,6 +63,9 @@ cssess.start = function() {
 	// Start with the current page
 	cssess.v.addLink(window.location.href);
 	
+	// Get site's base URL for checking remote scripts
+	var baseUrl = window.location.protocol + "//" + window.location.hostname;
+	
 	// Get anchors that don't have an empty href, JS, or internal link
 	cssess.$("a[href!='']:not([href^='javascript:']):not([href^='#']):not([href^='mailto:'])").each(function() {
 		var href = this.href;
@@ -70,7 +73,7 @@ cssess.start = function() {
 		// Check for external links
 		if (!href.match(/^https?:\/\//) 
 			|| (
-				href.indexOf(window.location.protocol + "//" + window.location.hostname) == 0 
+				href.indexOf(baseUrl) == 0 
 				&& href != window.location
 			)
 		) {
