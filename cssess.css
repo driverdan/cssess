@@ -8,7 +8,7 @@
  
  /* ---------- CSSess Reset ----------- */
 
-#cssess, #cssess-overlay, #cssess div, #cssess a, #cssess ul, #cssess li, #cssess h2, #cssess button {
+#cssess, #cssess-overlay, #cssess div, #cssess a, #cssess ul, #cssess li, #cssess h2, #cssess button.cssess-run {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -132,4 +132,8 @@
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d2ff52), color-stop(100%,#91e842));
 	color: rgba(0,0,0,.75);
 	cursor: pointer;
+}
+
+#cssess button.cssess-toggle {
+	margin: 1em 10px 0;
 }

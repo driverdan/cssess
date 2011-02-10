@@ -181,7 +181,7 @@ cssess.v.createWin = function() {
 		cssess.win.remove();
 	}
 	cssess.$("#cssess").remove();
-	cssess.win = cssess.$('<div id="cssess-overlay"/><div id="cssess"><h2>CSSess</h2><a class="cssess-close" title="close" href="">X</a><div class="cssess-body"><ul class="cssess-links"/><ul class="cssess-styles"/></div><button class="cssess-run">find unused selectors</button></div>');
+	cssess.win = cssess.$('<div id="cssess-overlay"/><div id="cssess"><h2>CSSess</h2><a class="cssess-close" title="close" href="">X</a><div class="cssess-body"><button class="cssess-toggle">Toggle</button><ul class="cssess-links"/><ul class="cssess-styles"/></div><button class="cssess-run">find unused selectors</button></div>');
 	
 	// Add event to run button to run tests
 	cssess.$("button.cssess-run", cssess.win).click(function() {
@@ -198,6 +198,14 @@ cssess.v.createWin = function() {
 		cssess.win.remove();
 		return false;
 	});
+	
+	// Button to toggle checkboxes
+	cssess.$(".cssess-toggle", cssess.win).click(function() {
+		cssess.$(":checkbox", cssess.win).each(function() {
+			this.checked ? this.checked = false : this.checked = "checked";
+		});
+	});
+	
 	cssess.win.appendTo("body");
 };
 
