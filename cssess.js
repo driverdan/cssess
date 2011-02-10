@@ -142,9 +142,7 @@ cssess.spider = function() {
 				// try / catch in case of cross domain issues
 				try {
 					cssess.checkStyles(this.src, cssess.$(this).contents());
-				} catch (e) {
-					console.log(e);
-				}
+				} catch (e) {}
 				
 				// Continue spidering
 				cssess.spider();
