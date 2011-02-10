@@ -66,8 +66,16 @@ cssess.start = function() {
 	// Get site's base URL for checking remote scripts
 	var baseUrl = window.location.protocol + "//" + window.location.hostname;
 	
-	// Get anchors that don't have an empty href, JS, or internal link
-	cssess.$("a[href!='']:not([href^='javascript:']):not([href^='#']):not([href^='mailto:'])").each(function() {
+	/**
+	 * Find valid anchor elements. Exclude
+	 * Empty hrefs
+	 * JavaScript
+	 * Hashes
+	 * Emails
+	 * Local files
+	 * Chrome extensions
+	 */
+	cssess.$("a[href!='']:not([href^='javascript:']):not([href^='#']):not([href^='mailto:']):not([href^='file:']):not([href^='chrome://'])").each(function() {
 		var href = this.href;
 		
 		// Check for external links
