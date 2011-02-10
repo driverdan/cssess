@@ -184,9 +184,9 @@ cssess.v.createWin = function() {
 	cssess.win = cssess.$('<div id="cssess-overlay"/><div id="cssess"><h2>CSSess</h2><a class="cssess-close" title="close" href="">X</a><div class="cssess-body"><button class="cssess-toggle">Toggle</button><ul class="cssess-links"/><ul class="cssess-styles"/></div><button class="cssess-run">find unused selectors</button></div>');
 	
 	// Add event to run button to run tests
-	cssess.$("button.cssess-run", cssess.win).click(function() {
+	cssess.$(".cssess-run", cssess.win).click(function() {
 		// Clear any previously detected styles
-		cssess.$("ul.cssess-styles", cssess.win).html("");
+		cssess.$(".cssess-styles", cssess.win).html("");
 		
 		// Load the checked links and spyder them.
 		cssess.loadLinks();
@@ -194,7 +194,7 @@ cssess.v.createWin = function() {
 	});
 	
 	// Close button removes the win div
-	cssess.$("a.cssess-close", cssess.win).click(function() {
+	cssess.$(".cssess-close", cssess.win).click(function() {
 		cssess.win.remove();
 		return false;
 	});
@@ -216,7 +216,7 @@ cssess.v.addLink = function(href) {
 	// Make sure the link hasn't already been found
 	if (cssess.$.inArray(href, cssess.links) == -1) {
 		cssess.links.push(href);
-		cssess.$("ul.cssess-links", cssess.win).append('<li><input type="checkbox" name="urls" value="' + href + '" checked/> ' + href + '</li>');
+		cssess.$(".cssess-links", cssess.win).append('<li><input type="checkbox" name="urls" value="' + href + '" checked/> ' + href + '</li>');
 	}
 };
 
@@ -224,7 +224,7 @@ cssess.v.addLink = function(href) {
  * Save additional unused selectors
  */
 cssess.v.addUnused = function(name, selectors) {
-	var $ul = cssess.$("ul.cssess-styles", cssess.win)
+	var $ul = cssess.$(".cssess-styles", cssess.win)
 		, li = "<li><strong>" + name + " (" + selectors.length + " found)</strong><ul>"
 		, i;
 	// Each missing selector
@@ -257,7 +257,7 @@ cssess.v.addUnused = function(name, selectors) {
 	// Load jQuery
 	// Intentionally loads even if already on page to avoid version incompatibilities
 	el = d.createElement(t);
-	el.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js";
+	el.src = "//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js";
 	el.onload = function() {
 		el.loaded = true;
 		cssess.$ = jQuery.noConflict(true);
