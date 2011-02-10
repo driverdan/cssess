@@ -15,6 +15,9 @@ cssess.baseUrl = "https://github.com/driverdan/cssess/raw/master/";
 // At some point this will be changed to switch via URL parameter
 //cssess.baseUrl = "../";
 
+// Get site's base URL for checking remote scripts
+cssess.siteUrl = window.location.protocol + "//" + window.location.hostname;
+
 // Namespace for all templates / views
 cssess.v = {};
 
@@ -40,10 +43,16 @@ cssess.checkStyles = function(url, source) {
 	}
 	
 	// Process stylesheets
-	cssess.$("link[rel='stylesheet']", source).each(function() {
+	cssess.$("link[href!='']:not([href^='file:']):not([href^='chrome://'])", source).each(function() {
 		// Check for local or external stylesheet
 		var href = this.href;
-		//if (href.indexOf(window.location.hostname)) {
+		
+		if (!href.match(/^https?:\/\//) 
+			|| (
+				href.indexOf(cssess.siteUrl) == 0 
+				&& href != window.location
+			)
+		) {
 			cssess.$.get(href, function(data, status) {
 				if (data) {
 					var selectors = cssess.parseCss(data, source);
@@ -52,7 +61,7 @@ cssess.checkStyles = function(url, source) {
 					}
 				}
 			});
-		//}
+		}
 	});
 };
 
@@ -62,9 +71,6 @@ cssess.checkStyles = function(url, source) {
 cssess.start = function() {
 	// Start with the current page
 	cssess.v.addLink(window.location.href);
-	
-	// Get site's base URL for checking remote scripts
-	var baseUrl = window.location.protocol + "//" + window.location.hostname;
 	
 	/**
 	 * Find valid anchor elements. Exclude
@@ -81,7 +87,7 @@ cssess.start = function() {
 		// Check for external links
 		if (!href.match(/^https?:\/\//) 
 			|| (
-				href.indexOf(baseUrl) == 0 
+				href.indexOf(cssess.siteUrl) == 0 
 				&& href != window.location
 			)
 		) {
