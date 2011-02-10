@@ -156,7 +156,7 @@ cssess.spider = function() {
 			$iframe.attr("src", src);
 		}
 	} else {
-		cssess.$("cssesspider").remove();
+		cssess.$("#cssesspider").remove();
 	}
 };
 
