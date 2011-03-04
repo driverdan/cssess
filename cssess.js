@@ -18,6 +18,12 @@ cssess.baseUrl = "https://github.com/driverdan/cssess/raw/master/";
 // Get site's base URL for checking remote scripts
 cssess.siteUrl = window.location.protocol + "//" + window.location.hostname;
 
+// Data format version. Used for Jdrop.
+cssess.dataVersion = "1.0.0";
+
+// Save result data. Used for views & Jdrop.
+cssess.data = [];
+
 // Namespace for all templates / views
 cssess.v = {};
 
@@ -39,7 +45,7 @@ cssess.checkStyles = function(url, source) {
 	});
 	
 	if (style.length) {
-		cssess.v.addUnused("inline styles (" + url + ")", style);
+		cssess.addUnused("inline styles (" + url + ")", style);
 	}
 	
 	// Process stylesheets
@@ -54,7 +60,7 @@ cssess.checkStyles = function(url, source) {
 				if (data) {
 					var selectors = cssess.parseCss(data, source);
 					if (selectors.length) {
-						cssess.v.addUnused(href, selectors);
+						cssess.addUnused(href, selectors);
 					}
 				}
 			});
@@ -170,6 +176,60 @@ cssess.loadLinks = function() {
 	cssess.$("input[name='urls']:checked", cssess.win).each(function() {
 		cssess.urls.push(this.value);
 	});
+};
+
+/**
+ * Add unused styles to data array and to view.
+ */
+cssess.addUnused = function(name, selectors) {
+	cssess.data[name] = {
+		count: selectors.length
+		,selectors: selectors
+	};
+	
+	cssess.v.addUnused(name, selectors);
+};
+
+/**
+ * Save data to Jdrop
+ */
+cssess.saveToJdrop = function(summary) {
+	// create object of parameters to pass to Jdrop
+	var params = {
+		appname: "CSSess"
+		,title: document.title
+		,version: cssess.dataVersion
+		,summary: summary
+		,json: JSON.stringify(cssess.data)
+	};
+
+	// hidden iframe to use as target of form submit
+	var jdropif = document.createElement("iframe");
+	jdropif.style.display = "none";
+	jdropif.name = "jdropiframe";
+	jdropif.id = "jdropiframe";
+	document.body.appendChild(jdropif);
+
+	// form for posting data
+	var jdropform = document.createElement("form");
+	jdropform.method = "post";
+	jdropform.action = "http://jdrop.org/save";
+	jdropform.target = "jdropiframe";
+	jdropform.style.display = "hidden";
+
+	// add each param to the form as an input field
+	for (var key in params) {
+		var pInput = document.createElement("input");
+		pInput.setAttribute("name", key);
+		pInput.setAttribute("value", params[key]);
+		jdropform.appendChild(pInput);
+	}
+
+	// submit the form and cleanup
+	document.body.appendChild(jdropform);
+	jdropif.onload = function() { document.body.removeChild(jdropform); document.body.removeChild(jdropif); };
+	jdropif.onerror = function() { document.body.removeChild(jdropform); document.body.removeChild(jdropif); };
+	jdropform.submit();
 };
 
 /**
