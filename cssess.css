@@ -42,7 +42,7 @@
 	background: #fff;
 	border: 1px solid #000;
 	width: 700px;
-	height: 500px;
+	height: 492px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -57,18 +57,18 @@
 
 #cssess .cssess-body {
 	overflow: auto;
-	height: 383px;
+	height: 400px;
 }
 
 #cssess h2 {
 	text-align: center;
-	padding: 15px 0;
-	font-size: 30px;
+	padding: 10px 0;
+	font-size: 25px;
 	font-family: serif;
 	font-weight: 700;
 	text-shadow: 1px 1px 0 rgba(255,255,255,.8);
 	border-bottom: 1px solid #aaa;
-	line-height: 30px;
+	line-height: 25px;
 	-moz-border-radius-topleft: 15px;
 	-moz-border-radius-topright: 15px;
 	border-top-left-radius: 15px;
@@ -90,7 +90,7 @@
 
 #cssess a.cssess-close {
 	position: absolute;
-	top: 15px;
+	top: 9px;
 	right: 15px;
 	font-weight: bold;
 	-moz-border-radius: 15px;
@@ -114,12 +114,12 @@
 	display: block;
 	width: 100%;
 	margin: 0 auto;
-	padding: 11px 0;
+	padding: 10px 0;
 	border-top: 1px solid #aaa;
 	position: absolute;
 	bottom: 0;
-	line-height: 30px;
-	font-size: 30px;
+	line-height: 25px;
+	font-size: 25px;
 	font-family: serif;
 	font-weight: 700;
 	text-shadow: 1px 1px 0 rgba(220,243,183,.9);
