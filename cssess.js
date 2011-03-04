@@ -10,10 +10,10 @@
 
 var cssess = cssess || {};
 
-cssess.baseUrl = "https://github.com/driverdan/cssess/raw/master/";
+//cssess.baseUrl = "https://github.com/driverdan/cssess/raw/master/";
 // CHANGE TO RELATIVE PATH FOR TESTING
 // At some point this will be changed to switch via URL parameter
-//cssess.baseUrl = "../";
+cssess.baseUrl = "../";
 
 // Get site's base URL for checking remote scripts
 cssess.siteUrl = window.location.protocol + "//" + window.location.hostname;
@@ -22,7 +22,7 @@ cssess.siteUrl = window.location.protocol + "//" + window.location.hostname;
 cssess.dataVersion = "1.0.0";
 
 // Save result data. Used for views & Jdrop.
-cssess.data = [];
+cssess.data = {};
 
 // Namespace for all templates / views
 cssess.v = {};
@@ -182,10 +182,7 @@ cssess.loadLinks = function() {
  * Add unused styles to data array and to view.
  */
 cssess.addUnused = function(name, selectors) {
-	cssess.data[name] = {
-		count: selectors.length
-		,selectors: selectors
-	};
+	cssess.data[name] = selectors;
 	
 	cssess.v.addUnused(name, selectors);
 };
@@ -241,7 +238,7 @@ cssess.v.createWin = function() {
 		cssess.win.remove();
 	}
 	cssess.$("#cssess").remove();
-	cssess.win = cssess.$('<div id="cssess-overlay"/><div id="cssess"><h2>CSSess</h2><a class="cssess-close" title="close" href="">X</a><div class="cssess-body"><button class="cssess-toggle">Toggle</button><ul class="cssess-links"/><ul class="cssess-styles"/></div><button class="cssess-run">find unused selectors</button></div>');
+	cssess.win = cssess.$('<div id="cssess-overlay"/><div id="cssess"><h2>CSSess</h2><a class="cssess-close" title="close" href="">X</a><div class="cssess-body"><button class="cssess-toggle">Toggle</button><button class="cssess-jdrop">Save to Jdrop</button><ul class="cssess-links"/><ul class="cssess-styles"/></div><button class="cssess-run">find unused selectors</button></div>');
 	
 	// Add event to run button to run tests
 	cssess.$(".cssess-run", cssess.win).click(function() {
@@ -251,6 +248,7 @@ cssess.v.createWin = function() {
 		// Load the checked links and spyder them.
 		cssess.loadLinks();
 		cssess.spider();
+		cssess.$(".cssess-jdrop").show();
 	});
 	
 	// Close button removes the win div
@@ -264,6 +262,20 @@ cssess.v.createWin = function() {
 		cssess.$(":checkbox", cssess.win).each(function() {
 			this.checked ? this.checked = false : this.checked = "checked";
 		});
+	});
+	
+	// Button to save to Jdrop
+	// @see http://jdrop.org
+	cssess.$(".cssess-jdrop", cssess.win).click(function() {
+		// Get a total count of unused selectors
+		var count = 0;
+		
+		for (i in cssess.data) {
+			count += cssess.data[i].length;
+		}
+		
+		// Save it
+		cssess.saveToJdrop(count + " unused CSS selectors");
 	});
 	
 	cssess.win.appendTo("body");

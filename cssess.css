@@ -134,6 +134,11 @@
 	cursor: pointer;
 }
 
-#cssess button.cssess-toggle {
+#cssess button.cssess-toggle, #cssess button.cssess-jdrop {
 	margin: 1em 10px 0;
+}
+
+#cssess button.cssess-jdrop {
+	float: right;
+	display: none;
 }
