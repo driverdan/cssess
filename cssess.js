@@ -10,10 +10,10 @@
 
 var cssess = cssess || {};
 
-//cssess.baseUrl = "https://github.com/driverdan/cssess/raw/master/";
+cssess.baseUrl = "https://raw.github.com/driverdan/cssess/master/";
 // CHANGE TO RELATIVE PATH FOR TESTING
 // At some point this will be changed to switch via URL parameter
-cssess.baseUrl = "../";
+//cssess.baseUrl = "../";
 
 // Get site's base URL for checking remote scripts
 cssess.siteUrl = window.location.protocol + "//" + window.location.hostname;
@@ -296,14 +296,28 @@ cssess.v.addLink = function(href) {
  * Save additional unused selectors
  */
 cssess.v.addUnused = function(name, selectors) {
-	var $ul = cssess.$(".cssess-styles", cssess.win)
-		, li = "<li><strong>" + name + " (" + selectors.length + " found)</strong><ul>"
-		, i;
-	// Each missing selector
-	for (i in selectors) {
-		li += "<li>" + selectors[i] + "</li>";
+	var data = {}
+		,i;
+	
+	if (name && selectors) {
+		data[name] = selectors;
+	} else {
+		data = name;
 	}
-	$ul.append(li + "</ul></li>");
+	
+	for (i in data) {
+		name = i;
+		selectors = data[i];
+		
+		var $ul = cssess.$(".cssess-styles", cssess.win)
+			, li = "<li><strong>" + name + " (" + selectors.length + " found)</strong><ul>"
+			, i;
+		// Each missing selector
+		for (i in selectors) {
+			li += "<li>" + selectors[i] + "</li>";
+		}
+		$ul.append(li + "</ul></li>");
+	}
 };
 
 // Initialize everything
