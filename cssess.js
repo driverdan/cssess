@@ -10,7 +10,7 @@
 
 var cssess = cssess || {};
 
-cssess.baseUrl = "https://raw.github.com/driverdan/cssess/master/";
+cssess.baseUrl = "http://driverdan.github.com/cssess/";
 // CHANGE TO RELATIVE PATH FOR TESTING
 // At some point this will be changed to switch via URL parameter
 //cssess.baseUrl = "../";
