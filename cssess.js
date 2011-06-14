@@ -330,7 +330,11 @@ cssess.v.addUnused = function(name, selectors) {
 	, init = function($) {
 		// Create modal window
 		cssess.v.createWin();
-		cssess.start();
+
+		// Don't run start if it's loading Jdrop data
+		if (!JDROPVIEW) {
+			cssess.start();
+		}
 	};
 	
 	// Get the stylesheet
