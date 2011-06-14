@@ -1,0 +1,144 @@
+/**
+ * Styles for CSSess
+ *
+ * @see http://github.com/driverdan/cssess
+ * @author Dan DeFelippi <dan@driverdan.com>
+ * @license MIT
+ */
+ 
+ /* ---------- CSSess Reset ----------- */
+
+#cssess, #cssess-overlay, #cssess div, #cssess a, #cssess ul, #cssess li, #cssess h2, #cssess button.cssess-run {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+#cssess input {
+	vertical-align: middle;
+}
+
+/* ------------------------------------ */
+
+#cssess-overlay {
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9998;
+}
+
+#cssess {
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-shadow: 0 0 25px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 25px rgba(0,0,0,.5);
+	box-shadow: 0 0 25px rgba(0,0,0,.5); 
+	background: #fff;
+	border: 1px solid #000;
+	width: 700px;
+	height: 492px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left: -350px;
+	overflow: hidden;
+	z-index: 9999;
+	color: #222;
+	text-align: left;
+	font-size: 14px;
+}
+
+#cssess .cssess-body {
+	overflow: auto;
+	height: 400px;
+}
+
+#cssess h2 {
+	text-align: center;
+	padding: 10px 0;
+	font-size: 25px;
+	font-family: serif;
+	font-weight: 700;
+	text-shadow: 1px 1px 0 rgba(255,255,255,.8);
+	border-bottom: 1px solid #aaa;
+	line-height: 25px;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-topright: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background: #eee;
+	background: -moz-linear-gradient(top, #eee 0%, #ccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eee), color-stop(100%,#ccc));
+	color: rgba(0,0,0,.75);
+}
+
+#cssess ul {
+	list-style-type: none;
+	margin: 15px 15px 0;
+}
+
+#cssess li {
+	display: list-item;
+}
+
+#cssess a.cssess-close {
+	position: absolute;
+	top: 9px;
+	right: 15px;
+	font-weight: bold;
+	-moz-border-radius: 15px;
+	border-radius: 15px; 
+	background: #d00;
+	border: 1px solid rgba(0,0,0,.5);
+	color: #fff;
+	padding: 6px 10px;
+	text-decoration: none;
+	font-family: sans-serif;
+	text-shadow: 1px 1px 1px #000;
+	filter: dropshadow(color=#000, offx=1, offy=1);
+
+}
+
+#cssess a.cssess-close:hover {
+	background: #AF0000;
+}
+
+#cssess button.cssess-run {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px 0;
+	border-top: 1px solid #aaa;
+	position: absolute;
+	bottom: 0;
+	line-height: 25px;
+	font-size: 25px;
+	font-family: serif;
+	font-weight: 700;
+	text-shadow: 1px 1px 0 rgba(220,243,183,.9);
+	-moz-border-radius-bottomright: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	background: #d2ff52;
+	background: -moz-linear-gradient(top, #d2ff52 0%, #91e842 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d2ff52), color-stop(100%,#91e842));
+	color: rgba(0,0,0,.75);
+	cursor: pointer;
+}
+
+#cssess button.cssess-toggle, #cssess button.cssess-jdrop {
+	margin: 1em 10px 0;
+}
+
+#cssess button.cssess-jdrop {
+	float: right;
+	display: none;
+}
